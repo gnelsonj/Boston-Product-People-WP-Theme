@@ -1,0 +1,20 @@
+table
+  margin: 0
+  @include typecsset-space(margin-top, 0.5)
+  @include typecsset-space(margin-bottom, 0.5)
+  width: 100%
+
+th
+  border-bottom: 1px solid darken($base-border-color, 15%)
+  font-weight: bold
+  @include typecsset-space(padding-top, 0.5)
+  @include typecsset-space(padding-bottom, 0.5)
+  text-align: left
+
+td
+  border-bottom: 1px solid $base-border-color
+  @include typecsset-space(padding-top, 0.5)
+  @include typecsset-space(padding-bottom, 0.5)
+
+tr, td, th
+  vertical-align: middle

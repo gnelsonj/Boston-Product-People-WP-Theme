@@ -1,0 +1,62 @@
+// Header
+
+html
+    background-color: #2d2d2d
+
+body
+    background-color: #ffffff
+
+.header
+    font-family: $sans
+    @include typecsset-space(padding-top, 1)
+    @include typecsset-space(padding-bottom, 1)
+
+    nav
+        @include typecsset-space(line-height, 1)
+        
+        a + a
+            @include typecsset-space(margin-left, 1)
+
+    #logo>img
+        @include typecsset-space(height, 1)
+        max-width: 163px
+
+    @include at-breakpoint($break)
+
+        #logo
+            float: left
+
+        nav
+            float: right
+    
+//footers
+
+.article-footer
+    @include typecsset-space(margin-bottom, 2)
+
+.footer
+    @include typecsset-space(padding-bottom, 2)
+    @include typecsset-space(padding-top, 2)
+    background-color: #2D2D2D
+    color: #fff
+
+    a
+        color: #fff
+
+    nav > a + a
+        @include typecsset-space(margin-left, 2)
+
+.footer__column
+
+    @include at-breakpoint($break)
+        @include span-columns(4, $break)
+
+        &:last-child
+            @include span-columns(4 omega, $break)
+
+    a
+        display: block
+        margin: 0!important
+
+    #logo > img
+        @include typecsset-space(height, 1)

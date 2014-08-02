@@ -1,0 +1,26 @@
+%button
+  display: inline-block
+  +border-radius(8px)
+  border: 0
+  @include typecsset-space(padding-top, 0.25)
+  @include typecsset-space(padding-right, 0.5)
+  @include typecsset-space(padding-bottom, 0.25)
+  @include typecsset-space(padding-left, 0.5)
+  background-color: $orange
+  color: #fff
+  font-size: $base-font-size
+  text-align: center
+
+  &.large
+    @include typecsset-space(padding-top, 0.5)
+    @include typecsset-space(padding-right, 2)
+    @include typecsset-space(padding-bottom, 0.5)
+    @include typecsset-space(padding-left, 2)
+    @include typecsset-font-size($typecsset-h3-size)
+
+  &:hover
+    background-color: lighten($orange, 5%)
+
+  &:active
+    background-color: darken($orange, 5%)
+    @include box-shadow(none)

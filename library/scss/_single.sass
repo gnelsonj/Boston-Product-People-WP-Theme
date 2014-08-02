@@ -1,0 +1,97 @@
+$article-columns: 8
+
+.marketing_blog
+    @include typecsset-space(margin-top, 1)
+        
+    @include at-breakpoint($break)
+        @include typecsset-space(margin-top, 2)
+        
+.blog__content img
+    @include typecsset-space(margin-bottom, 1)
+    margin-left: auto
+    margin-right: auto
+    display: block
+
+.blog__content h2
+    @include typecsset-space(margin-top, 2)
+
+.article
+    
+    @include at-breakpoint($break)
+        @include span-columns($article-columns omega, $break)
+        @include pad(2,2)
+
+.blog__content, .blog__footer
+    @include at-breakpoint($break)
+        @include span-columns($article-columns omega, $article-columns)
+
+.article-title
+    @include typecsset-font-size($typecsset-article-title-size)
+    @include typecsset-space(margin-bottom, 1)
+
+.the-content
+    @include at-breakpoint($break)
+        @include span-columns(7 omega, $article-columns)
+
+.byline
+    @include typecsset-space(margin-top, 1.5)
+    @include typecsset-space(margin-bottom, 1.5)
+    color: $grey
+        
+    .author
+
+.blog__sidebar
+    @include at-breakpoint($break)
+        @include span-columns(1, $article-columns)
+
+    .avatar
+        +border-radius(50%)
+        @include typecsset-space(margin-bottom, 1)
+        display: none
+
+        @include at-breakpoint($break)
+            display: block
+.blog__share-buttons
+    @include typecsset-space(margin-top, 1)
+
+    h3
+        @include typecsset-space(margin-bottom, 0.25)
+
+.blog__author-box, .blog__leadin-description
+
+    p
+        margin-bottom: 0
+
+    h3
+        @include typecsset-space(margin-bottom, 0.25)
+
+.blog__author-box
+
+    @include at-breakpoint($break)
+        @include span-columns(4, $article-columns)
+
+.blog__leadin-description
+
+    @include at-breakpoint($break)
+        @include span-columns(4 omega, $article-columns)
+
+.blog__bottom-cta
+    @extend %cta
+    @include typecsset-space(margin-top, 1)
+    @include typecsset-space(margin-bottom, 1)
+
+    @include at-breakpoint($break)
+        @include span-columns($article-columns omega, $article-columns)
+
+    h2, p
+        @include typecsset-space(margin-bottom, 0.25)
+
+.blog__article-comments
+    @include at-breakpoint($break)
+        @include span-columns($article-columns omega, $article-columns)
+
+.blog__expand-full-width
+    @include at-breakpoint($break)
+        margin:
+            right: 0
+            left: 0

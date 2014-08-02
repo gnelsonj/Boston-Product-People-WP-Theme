@@ -1,0 +1,16 @@
+.box
+    +border-radius($base-border-radius)
+    padding: $grid-padding
+    box-sizing: border-box
+    +pie-clearfix
+
+    > *:last-child
+        margin-bottom: 0!important
+
+.box--green
+    @extend .box
+    background-color: $green
+    color: #fff
+
+    h1, h2, h3, h4, h5, h6
+        color: $green-header-text

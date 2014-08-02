@@ -1,0 +1,250 @@
+=page-section-color($background-color: #fff, $header-color: $grey-header-text, $text-color: $grey-body-text, $light-bg-color: $grey-light, $dark-bg-color: $grey-dark)
+    @extend .page-section
+    background-color: $background-color
+    color: $text-color
+
+    .page-section__header, .section-color, .page-section__centered-header, label
+        color: $header-color
+
+    .box--light
+        @extend .box
+        background-color: $light-bg-color
+
+    .box--dark
+        @extend .box
+        background-color: $dark-bg-color
+
+    .testimonial__quote
+        border-color: $dark-bg-color
+
+        &:after
+            border-top-color: $dark-bg-color
+
+.page, .archive, .error404
+
+    @include at-breakpoint($break)
+        #main
+            @include span-columns(8 omega, $break)
+            @include pad(2, 2)
+
+            &.skinny
+                @include span-columns(6 omega, $break)
+                @include pad(3, 3)
+
+    .page-title
+        text-align: center
+        @include typecsset-space(margin-bottom, 2)
+
+.page-header
+
+    @include at-breakpoint($break)
+        @include span-columns($break omega, $break)
+        
+        .text-column
+            @include span-columns(5, $break)
+
+        .image-column    
+            @include span-columns(7 omega, $break)
+
+        .screenshot
+            @include typecsset-space(margin-bottom, -3)
+
+.download-button-top
+    @include typecsset-space(margin-top, 1)
+
+.testimonial__quote
+    position: relative
+    +border-radius($base-border-radius)
+    border: 4px solid $grey-light
+    @include typecsset-space (padding-top, .5)
+    @include typecsset-space (padding-right, .5)
+    @include typecsset-space (padding-bottom, .5)
+    @include typecsset-space (padding-left, 2)
+    @include typecsset-space (margin-bottom, 0.5)
+
+    &:before
+        content: '“'
+        font-family: georgia
+        color: #FCD45F
+        font-size: 5em
+        position: absolute
+        top: -20px
+        left: 0.5rem
+
+    &:after
+        position: absolute
+        top: 100%
+        left: 4.5em
+        height: 0
+        width: 0
+        content: ''
+        border-top: 1.8em solid $grey-light
+        border-right: 1.5em solid transparent
+
+
+.testimonial__image
+    float: left
+    @include typecsset-space (height, 3)
+    @include typecsset-space (width, 3)
+    @include typecsset-space (margin-right, 1)
+    +border-radius(50%)
+
+.page-section
+    @include span-columns($break omega, $break)
+    @include typecsset-space(padding-top, 1)
+    @include typecsset-space(padding-bottom, 1)
+    @include page-section-color()
+    
+    @include at-breakpoint($break)
+        @include typecsset-space(padding-top, 2)
+        @include typecsset-space(padding-bottom, 2)
+
+    .cta-button
+        @extend %button
+        @include typecsset-space(margin-bottom, 0.5)
+
+    .secondary-cta
+        font-style: italic
+        color: $grey-light
+
+.page-section__header--centered
+    text-align: center
+    @include typecsset-space(margin-bottom, 2)
+
+.page-section--teal
+    @include page-section-color($teal, $teal-header-text, $teal-body-text, $teal-light, $teal-dark)
+
+.page-section--green
+    @include page-section-color($green, $green-header-text, $green-body-text, $green-light, $green-dark)
+
+.page-section--blue
+    @include page-section-color($blue, $blue-header-text, $blue-body-text, $blue-light, $blue-dark)
+
+.page-section--orange
+    @include page-section-color($orange, $orange-header-text, $orange-body-text, $orange-light, $orange-dark)
+
+.page-section--yellow
+    @include page-section-color($yellow, $yellow-header-text, $yellow-body-text, $yellow-light, $yellow-dark)
+
+.page-section-how
+    
+    @include at-breakpoint($break)
+
+        .how-column
+            @include span-columns(6, $break)
+
+        .integrations-column
+            @include span-columns(3, $break)
+
+            &:last-child
+                @include span-columns(3 omega, $break)
+
+
+.page-header-setup
+    
+    .step-image
+        @include typecsset-space(margin-bottom, 0.5)
+
+        &+.step-image
+            @include typecsset-space(margin-top, 0.5)
+
+    .step-title
+        @include typecsset-space(margin-bottom, 0.5)
+
+    @include at-breakpoint($break)
+
+        .step
+            @include span-columns(4, $break)
+
+            &:nth-child(4n)
+                @include span-columns(4 omega, $break)
+
+        .step-image
+            @include typecsset-space(margin-bottom, 1)
+            @include typecsset-space(margin-top, 0)
+            display: block
+            margin-left: auto
+            margin-right: auto
+            
+.page-section-features
+
+    @include at-breakpoint($break)
+
+        .feature
+            @include span-columns(10 omega, $break)
+            @include pad(1, 1)
+
+            + .feature
+                @include typecsset-space(margin-top, 2)
+
+        .feature__text
+            @include span-columns(4, 10)
+
+            &:last-child
+                @include span-columns(4 omega, 10)
+
+        .feature__header
+            @include typecsset-space(margin-top, 1.5)
+            @include typecsset-space(margin-bottom, 0.5)
+
+        .feature__image
+            @include span-columns(6, 10)
+
+            &:last-child
+                @include span-columns(6 omega, 10)
+
+            img
+                +border-radius($base-border-radius)
+                background-color: $grey-light
+
+
+.page-section-pricing
+    
+    .pricing__column
+
+        @include at-breakpoint($break)
+            @include span-columns(4, $break)
+            
+            &:last-child
+                @include span-columns(4 omega, $break)
+
+        .price-content
+            text-align: center
+
+.page-section-integrations
+    
+    .integration-column
+
+        @include at-breakpoint($break)
+            @include span-columns(3, $break)
+            @include pad(2,2)
+            &:last-child
+                @include span-columns(3 omega, $break)
+                @include pad(0,2)
+
+.page-section-contact
+    
+    .hbspt-form
+        @include at-breakpoint($break)
+            @include pad(3, 3, $break)
+            @include span-columns(6 omega, $break)
+
+.page-section-bottom-cta
+
+    @include at-breakpoint($break)
+       
+        .bottom-cta-left
+            @include span-columns(5, $break)
+
+        .bottom-cta-right
+            @include span-columns(7 omega, $break)
+
+.page-section-vip-signup
+
+    @include at-breakpoint($break)
+       
+        .vip-signup__column-left
+            @include span-columns(5, $break)
+
+        .vip-signup__column-right
+            @include span-columns(7 omega, $break)

@@ -1,0 +1,15 @@
+@import "susyone"
+
+// Settings
+$total-columns  : 7
+$column-width   : 4em
+$gutter-width   : 2em
+$grid-padding   : $gutter-width
+$break          : 12
+
+// Container
+.content-inner, .header-inner, .footer-inner, .topic-nav__inner, .blog-topic-header__inner
+    @include container($total-columns, $break)
+
+.footer
+    clear: both

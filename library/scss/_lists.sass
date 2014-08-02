@@ -1,0 +1,56 @@
+ul, ol, dl
+    %reset
+    @extend %typecsset-vertical-rhythm
+
+li > ul, li > ol
+    margin-bottom: 0
+
+ul, ol
+    @extend %reset
+    list-style-type: none
+
+    &%default-ul
+        list-style-type: disc
+        @include typecsset-space(padding-left, 1)
+
+    &%default-ol
+        list-style-type: decimal
+        @include typecsset-space(padding-left, 1)
+            
+    &%inline
+        margin: 0
+        
+        > li
+            display: inline
+
+    &.default-ul
+        list-style-type: disc
+        @include typecsset-space(padding-left, 1)
+
+    &.default-ol
+        list-style-type: decimal
+        @include typecsset-space(padding-left, 1)
+
+    &.checklist
+        >li
+            &:before
+                content: '✓'
+                padding-right: 1em 
+
+.article-content
+    
+    ul
+        list-style-type: disc
+        
+dl
+
+    dt
+        font-size: $typecsset-base-font-size*0.8
+        color: lighten($base-font-color, 20%)
+        text-transform: uppercase
+
+    dd
+        margin: 0
+        
+        + dt
+            @include typecsset-space(margin-top, 0.5)

@@ -1,0 +1,89 @@
+
+
+// download page Layout
+// break = 12
+@include at-breakpoint($break)
+    .page-download
+        
+        
+        .steps
+            @include pad(3, 3, $break)
+            @include span-columns(6 omega, $break)
+            
+            .step-names, .step-content
+                @include span-columns($break omega, $break)
+
+
+        .more-info
+            @include span-columns($break omega, $break)
+
+            p, h2, h3, h4, ul, ol, form
+                @include pad(3, 3, $break)
+                @include span-columns(6 omega, $break)
+
+        .navigation
+            @include span-columns($break omega, $break)
+        
+        .main
+            $main-columns: $break
+            @include span-columns($main-columns omega, $break)
+
+            .content
+                @include span-columns(8, $main-columns)
+
+            .more-info
+                @include span-columns(4 omega, $main-columns)
+
+// Element Styles
+.page-download
+    text-align: center
+    
+    &#content
+        @include typecsset-space(padding-top, 1)
+
+    h2
+
+    .steps
+
+        h3, p
+            margin: 0
+        
+        .step-names
+            margin: 0
+
+            .step-name
+                color: #ccc
+                display: list-item
+                float: left
+                width: 25%
+                @include typecsset-space(padding-bottom, 0.5)
+                @include typecsset-font-size(16px)
+                list-style: decimal inside none
+
+                &.active
+                    color: $teal-dark
+                    background-image: url(../images/triangle.png)
+                    background-position: bottom center
+                    background-repeat: no-repeat
+                
+                &.completed
+                    list-style-image:  url(../images/checkmark.png)
+
+
+        .step
+            display: none
+            @extend %cta
+
+            ol
+                text-align: left
+                @include typecsset-space(margin-bottom, 1)
+
+            label
+                text-align: left
+
+            &.active
+                display: block
+
+        .button
+            @extend %button
+            @include typecsset-space(margin-top, 1)
