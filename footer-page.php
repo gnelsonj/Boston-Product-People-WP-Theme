@@ -12,15 +12,6 @@
                 <a href="/learn-blogging">Learn Blogging</a>
                 <a href="/vip">Agencies and Developers</a>
                 <a href="/about">About</a>
-                <?php 
-                    if ( current_user_can('vip') ){
-                        echo '<a href="/vip-settings">VIP Settings</a>';
-                        echo '<a href="' . wp_logout_url('') . '">Log out</a>';
-                    }
-                    else{
-                        echo '<a href="/login">VIP Login</a>';
-                    }
-                ?>
             </nav>
 
             <nav class="footer__column">
@@ -33,10 +24,6 @@
         </div>
 
     </footer>
-
-    <?php get_template_part('include', 'mixpanel'); ?>
-    <?php get_template_part('include', 'snapengage'); ?>
-    <script src="<?php echo get_template_directory_uri(); ?>/library/js/hubspot-leadin.js"></script>
 
     <?php // all js scripts are loaded in library/bones.php ?>
     <?php wp_footer(); ?>
